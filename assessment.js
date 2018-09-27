@@ -1,65 +1,93 @@
-// #1 create a variable called 'myName' and assign it to your name as a string
+// #1 Create an object called 'me' that has three keys, 'firstname' 'age' and 'state'. Assign the keys the appropriate values.
+var me = {
+  firstname:"david",
+  age:21,
+  state:"utah",
+}
+// CODE HERE
 
-var myName = "David DeArmon";// CODE HERE
+// #2 Add a new key/value pair to the me object using dot notation. The new key should be 'faveColor' and set it to your favorite color as a string
+me.faveColor = "blue";
+//CODE HERE
 
-// #2 create a variable called 'faveNum' and assign it to your favorite number
+// #3 Below is an object, 'message'. Below it, add a 'text' key using bracket notation and assign it a string of whatever you would like.
+//DON'T TOUCH THE CODE BELOW
+var message = {
+  date: new Date(),
+  userName: me.firstname
+};
+//DON'T TOUCH THE CODE ABOVE
+// CODE HERE
+message["text"] = "Hello World";
 
-var faveNum = 7;// CODE HERE
+// #4 Create an object called 'adjustCount' and create two methods. One called 'upVote' and one called 'downVote'. upVote should take in a number and add one to it and downVote should take in a number and minus one from it.
+var adjustCount = {
+  upVote: function (num){
+    return ++num
+  },
+  downVote: function (num){
+    return --num
+  }
+}
+// CODE HERE
 
-// #3 create a variable called 'lovesCode' and set it to true
+// #5 Create an array called 'myFriends' with four of your friends names
+var myFriends = [
+  "Logan",
+  "Jordan",
+  "Chris",
+  "Jessica"
+]
+// CODE HERE
 
-var lovesCode = true;// CODE HERE
+// #6 Add a fifth friends name to the end of your myFriends array
+myFriends.push("Kianna")
+// CODE HERE
 
-// #4 Using the previously created variables, create a new variable called 'me' that uses the myName and faveNum varible to create a sentence like this 'My name is Bryan and my favorite number is 3'
+// #7 Create a 'myArrayCopy' variable. It should equal the myArray variable. Use the built in JavaScript method to create a copy.
+//DON'T TOUCH THE CODE BELOW
+var myArray = [1, 2, 3, 4];
+//DON'T TOUCH THE CODE ABOVE
+myArrayCopy = myArray.slice(0);
+// CODE HERE
 
-var me = "My name is "+myName+" and my favorite number is "+faveNum;// CODE HERE
-
-// #5 Using the previously created faveNum variable, create a new variable called 'trueFaveNum'. *trueFaveNum* should equal true when comparing faveNum to your favorite number.v // HINT: Use a comparison operator
-
-var trueFaveNum = (faveNum===7);// CODE HERE
-
-// #6 Create a new variable called notHakeem. Using the previously created myName variable, test that your name DOES NOT equal the string 'Hakeem Olajuwon'. If your name does happen to be Hakeem Olajuwon, test against 'Karl Malone'
-
-var notHakeem =! (myName==="Hakeem Olajuwon");// CODE HERE
-
-// #7 Create an if statement that checks the age variable below. If age is greater than 16, then set canDrive to true otherwise set canDrive to false. The canDrive variable will be set by the unit test so do not adjust it.
-var age = 18;
-var canDrive;
-
-
-if(age>=16){
-canDrive = true;
-}// CODE HERE
-
-// #8 Create an if statement inside of the responseCreator function that sets the colorResponse variable value based off of a passed in value. The param value passed in will be added in the unit test. If the param value is 'green' set colorResponse variable to 'Green is okay'. If the param value is 'red' set reponse variable to 'I heart red'. Otherwise set the colorResponse variable to 'What is your favorite color?'. Make sure to return the colorResponse variable at the end once it has been properly set.
-
-var colorResponse;
-
-var responseCreator = function(param){
- if(param =="green"){
-
-  return colorResponse = "Green is okay"
- }else if(param == "red"){
-  return colorResponse = "I heart red"
- }else{
-  return colorResponse = "What is your favorite color?"
- } 
+// #8 Below is a array, myNumbers. Create a function called 'evensOnly' that returns the 'evensArray' of only even numbers
+//DON'T TOUCH THE CODE BELOW
+var myNumbers = [333, 1, 4, 5, 511, 34, 88, 77, 222];
+//DON'T TOUCH THE CODE ABOVE
+function evensOnly(array) {
+  var evensArray = []
+  for(var i = 0;i<myNumbers.length;i++){
+    if(myNumbers[i]%2===0){
+      //array.splice(i,1);
+      evensArray.push(myNumbers[i])
+    }      
+  }
+  return evensArray
   // CODE HERE
 }
 
-// #9 Create a function called 'sum' that takes in one parameter and returns the sum of that parameter added it itself.
-
-function sum(param){
-  var result = param+param;
-  return result;
-}// CODE HERE
-
-// #10 Create a function called 'greeter' that takes in two parameters, name and number. Have 'greeter' return a string that says something like this 'Hi! I am Bryan and I am 28 years old" but with the appropriate values..
-
-function greeter(name, number){
-  var response = "Hi! I am "+name+" and I am "+number+" years old";
-  return response;
-}
-
-
+// #9 Using filter(), return only your friends of the array of people below. Assign it to a variable called 'trueFriends'.
+var peopleIknow = [
+  { name: "Steve", friend: true },
+  { name: "Dan", friend: false },
+  { name: "Bart", friend: true },
+  { name: "Sarah", friend: false },
+  { name: "Michelle", friend: false },
+  { name: "Holly", friend: true }
+];
 // CODE HERE
+var trueFriends = peopleIknow.filter(function(val,i,array){
+  return array[i].friend===true;
+})
+// #10 Create a function called indexFinder that will loop over an array and return a new array of the indexes of the contents e.g. [243, 123, 4, 12] would return [0,1,2,3]. 
+// Create a new variable called 'indexes' and set it to contain the indexes of randomNumbers.
+let randomNumbers = [1, 3453, 34, 456, 32, 3, 2, 0];
+function indexFinder(array){
+  var newArray = [];
+  for(var i = 0;i < array.length;i++){
+    newArray.push(i)
+  }
+  return newArray
+}
+var indexes = indexFinder(randomNumbers)
